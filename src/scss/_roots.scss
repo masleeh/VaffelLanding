@@ -1,0 +1,77 @@
+// Colors
+$grand_yellow: rgba(255, 148, 0, 0.6);
+$back_yellow: #FFDE73;
+$bg_white: #F9F6EC;
+$light_blue: #A9E3EB;
+$light_violet: rgba(244, 182, 231, 0.53);
+$light_yellow: #FFE688;
+$black: #000;
+
+// Color classes
+.grand-yellow {background-color: $grand_yellow;}
+.light-blue {background-color: $light_blue;}
+.light-violet {background-color: $light_violet;}
+.light-yellow {background-color: $light_yellow;}
+
+// Mixins
+@mixin FlexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin FlexRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin FlexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Common
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon-text {
+    @include FlexRow();
+    column-gap: 10px;
+    width: fit-content;
+}
+
+.icon-cont-med {
+    @include FlexCenter();
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.icon-cont-lrg {
+    @include FlexCenter();
+    max-width: 50px;
+    max-height: 50px;
+}
+
+// Roots
+body {
+    background-color: $bg_white;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+
+// Common text
+
+.title-h1 {
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 61px;
+}

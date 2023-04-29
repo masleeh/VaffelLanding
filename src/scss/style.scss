@@ -1,0 +1,13 @@
+@import './reset';
+@import './roots';
+
+// UI
+@import './UI/yButton.scss';
+@import './UI/dishCard.scss';
+
+// Navbar
+@import '../components/Navbar/Navbar.module.scss';
+
+// Index Page
+@import '../components/IndexPage/Header/Header.module.scss';
+@import '../components/IndexPage/Menu/Menu.module.scss';

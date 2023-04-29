@@ -1,0 +1,43 @@
+.navbar {
+    @include FlexRow();
+    height: 108px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: $black;
+
+    &-img-cont {
+        max-width: 220px;
+        max-height: 68px;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &-title {
+        cursor: pointer;
+    }
+
+
+}
+
+.nav-selected {
+    &::after {
+        content: "";
+        display: block;
+        bottom: 0px;
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 148, 0, 0.6);
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.nav-bordered {
+    border-bottom: 1px dashed rgba(255, 148, 0, 0.6);
+}
