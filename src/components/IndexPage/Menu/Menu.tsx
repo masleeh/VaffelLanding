@@ -7,7 +7,7 @@ const Menu = () => {
     return (
         <>
         <div className="menu-back-top">
-            <img src="./public/images/back-top.svg" alt="" className="menu-back-top-img" />
+            <img src="./images/back-top.svg" alt="" className="menu-back-top-img" />
         </div>
 
         <section className="menu">
@@ -39,7 +39,7 @@ const Menu = () => {
         </section>
 
         <div className="menu-back-bot">
-            <img src="./public/images/back-bot.svg" alt="" className="menu-back-bot-img" />
+            <img src="./images/back-bot.svg" alt="" className="menu-back-bot-img" />
         </div>
         </>
     )

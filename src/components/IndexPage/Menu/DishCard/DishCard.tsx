@@ -25,7 +25,7 @@ const DishCard = ({title = "Легенда Норвегии", description = "Л�
             
             {ingredient && <h3 className={["dish-card-ingredient", getColorClass()].join(" ")}>{ingredient}</h3>}
             <button className="dish-card-like-cont">
-                <img alt="" src="./public/images/unlike.svg"/>
+                <img alt="" src="./images/unlike.svg"/>
             </button>
 
             <div className="dish-card-image-cont">

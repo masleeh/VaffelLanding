@@ -4,6 +4,7 @@
 // UI
 @import './UI/yButton.scss';
 @import './UI/dishCard.scss';
+@import './UI/slider.scss';
 
 // Navbar
 @import '../components/Navbar/Navbar.module.scss';
@@ -11,3 +12,4 @@
 // Index Page
 @import '../components/IndexPage/Header/Header.module.scss';
 @import '../components/IndexPage/Menu/Menu.module.scss';
+@import '../components/IndexPage/MenuDownload/MenuDownload.module.scss';

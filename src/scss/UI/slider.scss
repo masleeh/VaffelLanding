@@ -1,0 +1,53 @@
+.slider {
+    &-cont {
+        margin-top: 60px;
+        cursor: grab;
+        overflow: hidden;
+    }
+    
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+
+    &-item {
+
+        margin-left: 85px;
+
+        &:last-child {
+            margin-right: 85px;
+        }
+
+        &-image {
+            min-height: 385px;
+            min-width: 585px;
+            object-fit: cover;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+    }
+
+    &-row {
+        display: flex;
+        flex-direction: row;
+        column-gap: 5px;
+        margin-top: 60px;
+        align-items: start;
+        justify-content: center;
+
+        &-image {
+            max-width: 35px;
+            max-height: 30px;
+
+            object-fit: contain;
+        }
+
+        &-title {
+            font-family: 'Montserrat Alternates';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 37px;
+            text-align: center;
+        }
+    }
+}
