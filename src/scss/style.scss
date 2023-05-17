@@ -5,6 +5,8 @@
 @import './UI/yButton.scss';
 @import './UI/dishCard.scss';
 @import './UI/slider.scss';
+@import './UI/bacTopBottom.scss';
+@import './UI/promSlider.scss';
 
 // Navbar
 @import '../components/Navbar/Navbar.module.scss';
@@ -13,3 +15,6 @@
 @import '../components/IndexPage/Header/Header.module.scss';
 @import '../components/IndexPage/Menu/Menu.module.scss';
 @import '../components/IndexPage/MenuDownload/MenuDownload.module.scss';
+@import '../components/IndexPage/Permanent/Permanent.module.scss';
+@import '../components/IndexPage/Contacts/Contacts.module.scss';
+@import '../components/Footer/Footer.module.scss';

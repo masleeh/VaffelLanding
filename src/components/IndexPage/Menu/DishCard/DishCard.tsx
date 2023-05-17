@@ -1,6 +1,6 @@
 
 interface IDishCardProps {
-    title?: string,
+    name?: string,
     description?: string,
     ingredient?: "Рыба" | "Курица" | "Свинина",
     price?: number,
@@ -10,7 +10,7 @@ interface IDishCardProps {
     image_link?: string
 }
 
-const DishCard = ({title = "Легенда Норвегии", description = "Лосось, сливочный сыр, огурец, руккола, шпинатное тесто", ingredient = "Свинина", price = 315, discountprice = 283, weight_big = 260, weight_small = 130, image_link = "https://firebasestorage.googleapis.com/v0/b/test-7978c.appspot.com/o/images%2F%D0%A5%D1%8D%D0%B9%20%D0%A5%D0%B0%D0%BD%D0%B8?alt=media&token=97e77ef8-ba44-41b0-8758-1c28525b30c6"}:IDishCardProps) => {
+const DishCard = ({name, description, ingredient, price, discountprice, weight_big, weight_small, image_link}:IDishCardProps) => {
     const getColorClass = ():string => {
         switch (ingredient) {
             case "Свинина": return "light-violet"
@@ -29,10 +29,10 @@ const DishCard = ({title = "Легенда Норвегии", description = "Л�
             </button>
 
             <div className="dish-card-image-cont">
-                <img alt={title} src={image_link} className="dish-card-image"/>
+                <img alt={name} src={image_link} className="dish-card-image"/>
             </div>
 
-            <h2 className="dish-card-title">{title}</h2>
+            <h2 className="dish-card-title">{name}</h2>
             <p className="dish-card-description">{description}</p>
 
             <div className="dish-card-grid">

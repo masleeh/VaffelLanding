@@ -1,0 +1,18 @@
+.prom_slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &_btn {
+        min-width: 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &_dot_row {
+        margin-top: 40px;
+        @include FlexCenter();
+        column-gap: 20px;
+    }
+}

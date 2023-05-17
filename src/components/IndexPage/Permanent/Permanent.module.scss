@@ -1,0 +1,63 @@
+.permanent {
+    background-color: $back_yellow;
+
+    &-dish-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        column-gap: 38px;
+        row-gap: 50px;
+    }
+}
+
+.promo-title {
+    margin-top: 40px;
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 61px;
+    border: 1px dashed #000000;
+    border-radius: 15px;
+    display: block;
+    height: 60px;
+    @include FlexCenter();
+    width: fit-content;
+    padding: 0 20px;
+}
+
+.prom_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 374px;
+    min-height: 470px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+    background-color: $light_yellow;
+
+    &_image {
+        height: 356px;
+        width: 374px;
+    }
+
+    &_title {
+        margin-top: 10px;
+        font-family: 'Montserrat Alternates';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+        color: $black;
+    }
+
+    &_desc {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: $black;
+        margin-top: 10px;
+    }
+}

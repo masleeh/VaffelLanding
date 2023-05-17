@@ -1,0 +1,123 @@
+.contact {
+
+    
+
+    &_title {
+        font-family: 'Montserrat Alternates';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 61px;
+        color: $black;
+        margin-top: 40px;
+    }
+
+    &_title2 {
+        margin-top: 40px;
+        display: block;
+        @include FlexCenter();
+        margin-left: auto;
+        height: 70px;
+        width: fit-content;
+        padding: 0 10px;
+        font-family: 'Montserrat Alternates';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 61px;
+        color: $black;
+
+        background-color: $light_yellow;
+        border-radius: 15px;
+    }
+
+    &_cont {
+        max-width: 775px;
+        width: 100%;
+        margin-top: 40px;
+    }
+    
+    position: relative;
+
+    &_s_title {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    &_s_row {
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        flex-direction: row;
+    }
+
+    &_ico {
+        width: 50px;
+        height: 50px;
+    }
+
+    &_s_info {
+        font-family: 'Montserrat Alternates';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+    }
+
+    &_s_grid {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        row-gap: 40px;
+        column-gap: 25px;
+    }
+
+    &_i_row {
+        margin-top: 30px;
+        display: flex;
+        column-gap: 25px;
+        flex-direction: row;
+    }
+
+    &_a_row {
+        margin-top: 40px;
+        display: flex;
+        column-gap: 26px;
+        flex-direction: row;
+    }
+
+    &_app {
+        width: 250px;
+        height: 95px;
+        border: 1px solid #000000;
+        border-radius: 20px;
+        @include FlexCenter();
+        column-gap: 8px;
+        background-color: $bg_white;
+
+        &_title {
+            display: block;
+            max-width: 160px;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 35px;
+        }
+
+        &_ico {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    position: relative;
+}
+
+.contact_img {
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    width: 650px;
+    object-fit: cover;
+    z-index: -1;
+}
