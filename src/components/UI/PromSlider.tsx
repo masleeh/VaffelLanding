@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { TSeason } from "../../types/Data";
 
 type PromSlides = {
-    slides: string[]
+    slides: TSeason[]
 }
 
-const PromSlider = ({slides}: PromSlides) => {
+const PromSlider = ({slides = [{image_link: ""}]}: PromSlides) => {
     const [activeDot, setActiveDot] = useState<number>(0)
 
     const nextSlide = () => {
@@ -24,7 +25,13 @@ const PromSlider = ({slides}: PromSlides) => {
         }
     }
 
-    
+    const renderedSlides = slides.map((slide, index) => {
+        return <motion.img 
+            initial={{opacity: 0, x: 300}}
+            animate={{opacity: 1, x: 0}}
+            exit={{opacity: 0, x: -300}}
+            key={index} alt="" src={slide.image_link}/>
+    })
 
 
     return (
@@ -34,7 +41,7 @@ const PromSlider = ({slides}: PromSlides) => {
                     <img src='/icons/arrow-left.svg'/>
                 </button>
                 <motion.div className="prom_slider_img_cont">
-                    <motion.img />
+                    {renderedSlides[activeDot]}
                 </motion.div>
                 <button className="prom_slider_btn" onClick={() => nextSlide()}>
                     <img src='/icons/arrow-right.svg'/>
@@ -43,7 +50,7 @@ const PromSlider = ({slides}: PromSlides) => {
 
             <div className="prom_slider_dot_row">
                 {slides.map((_, index) => {
-                    return <img src={index === activeDot ? "/icons/dot-act.svg" : "/icons/dot-dis.svg"} alt=""/>
+                    return <img key={index} src={index === activeDot ? "/icons/dot-act.svg" : "/icons/dot-dis.svg"} alt=""/>
                 })}
             </div>
         </>

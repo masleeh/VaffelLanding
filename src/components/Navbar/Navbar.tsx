@@ -31,7 +31,7 @@ const Navbar: React.FC<INavbar> = ({path}) => {
 
                 <div className="icon-text">
                     <div className="icon-cont-med">
-                        <img className="navbar-img" alt="Location" src="./public/loc-icon.svg"/>
+                        <img className="navbar-img" alt="" src="/icons/cart.svg"/>
                     </div>
                     <h2 className="navbar-title">Корзина</h2>
                 </div>

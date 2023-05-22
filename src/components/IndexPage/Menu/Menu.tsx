@@ -33,7 +33,7 @@ const Menu = ({catData, catLoading, activeCat, selectCat, dishesData, dishesLoad
                     <button className="menu-cats-item-loading"></button>
                 </div> :
                     <div className="menu-cats-row">
-                        {catData!.map((category, index) => {
+                        {catData && catData!.map((category, index) => {
                             return <button 
                                 key={index}
                                 className={category.name === activeCat ? 
@@ -49,7 +49,7 @@ const Menu = ({catData, catLoading, activeCat, selectCat, dishesData, dishesLoad
                     <div>hahaha</div>
                 </div> 
                     :<div className="menu-dish-row">
-                        {dishesData.map((dishItem, index) => {
+                        {dishesData && dishesData.map((dishItem, index) => {
                             return <DishCard 
                                 key={index}
                                 name={dishItem.name}

@@ -14,3 +14,15 @@ export type TDishes = {
     ingredient: "Рыба" | "Курица" | "Свинина",
     image_link: string
 }
+
+export type TPromo = {
+    id?: number;
+    image_link: string;
+    description: string;
+    title: string;
+}
+
+export type TSeason = {
+    id?: number;
+    image_link: string
+}

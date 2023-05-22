@@ -36,7 +36,10 @@ const DishCard = ({name, description, ingredient, price, discountprice, weight_b
             <p className="dish-card-description">{description}</p>
 
             <div className="dish-card-grid">
-                
+                <button className="dish-card-weight">{weight_big} г</button>
+                <h4 className="dish-card-prevprice">{price} р</h4>
+                <button className="dish-card-weight">{weight_small} г</button>
+                <button className="dish-card-buy">{discountprice} р <img alt="" src=""/></button>
             </div>
         </div>  
     )

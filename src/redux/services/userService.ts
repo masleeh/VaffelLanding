@@ -16,6 +16,16 @@ export const vaffelDataApi = createApi({
             query: (category: string) => ({
                 url: `dishes/${category}`
             })
+        }),
+        getPromotions: builder.query({
+            query: () => ({
+                url: "api/v1/promotions"
+            })
+        }),
+        getSeasons: builder.query({
+            query: () => ({
+                url: "api/v1/seasons"
+            })
         })
     })
 })

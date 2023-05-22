@@ -3,6 +3,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    min-height: 105px;
+    max-height: 500px;
 
     &_btn {
         min-width: 40px;
