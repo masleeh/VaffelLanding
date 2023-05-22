@@ -29,12 +29,12 @@ const Navbar: React.FC<INavbar> = ({path}) => {
                     ? "navbar-title nav-selected" 
                     : "navbar-title"}>О нас</NavLink>
 
-                <div className="icon-text">
+                <NavLink to="/cart" className="icon-text">
                     <div className="icon-cont-med">
                         <img className="navbar-img" alt="" src="/icons/cart.svg"/>
                     </div>
                     <h2 className="navbar-title">Корзина</h2>
-                </div>
+                </NavLink>
             </nav>
         </div>
     )

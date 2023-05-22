@@ -1,9 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { vaffelDataApi } from "./services/userService";
+import CartReducer from './services/cartService'
 
 
 const rootReducer = combineReducers({
-    [vaffelDataApi.reducerPath]: vaffelDataApi.reducer
+    [vaffelDataApi.reducerPath]: vaffelDataApi.reducer,
+    cart: CartReducer
 })
 
 export const setupStore = () => {

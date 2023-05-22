@@ -5,6 +5,7 @@ export type TCategories = {
 }
 
 export type TDishes = {
+    id?: number,
     name: string,
     description: string,
     price: number,
@@ -25,4 +26,14 @@ export type TPromo = {
 export type TSeason = {
     id?: number;
     image_link: string
+}
+
+export type TCartItem = {
+    id?: number;
+    image_link: string;
+    name: string;
+    description: string;
+    weight: number;
+    price: number;
+    quantity?: number;
 }
