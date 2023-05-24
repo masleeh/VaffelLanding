@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import DishCard from "./DishCard/DishCard";
 import { TCartItem, TCategories, TDishes } from "../../../types/Data";
+import { addItemToCart } from "../../../redux/services/cartService";
 
 type TMenu = {
     catLoading: boolean;
@@ -12,6 +13,7 @@ type TMenu = {
     favState: number[];
     addToFav: (dishData: TCartItem) => void;
     removeFromFav: (dishId: number) => void;
+    addToCart: (dishData: TCartItem) => void;
 };
 
 const Menu = ({
@@ -23,7 +25,8 @@ const Menu = ({
     dishesLoading,
     addToFav,
     removeFromFav,
-    favState
+    favState,
+    addToCart
 }: TMenu) => {
     return (
         <>
@@ -97,6 +100,7 @@ const Menu = ({
                                             addToFav={addToFav}
                                             removeFromFav={removeFromFav}
                                             favState={favState}
+                                            addToCart={addToCart}
                                         />
                                     );
                                 })}

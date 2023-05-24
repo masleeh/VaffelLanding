@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TCartItem } from "../../../../types/Data";
+import { useAppDispatch } from "../../../../hooks/redux";
 
 export interface IDishCardProps {
     id?: number;
@@ -14,6 +15,7 @@ export interface IDishCardProps {
     favState: number[];
     addToFav: (dishData: TCartItem) => void;
     removeFromFav: (dishId: number) => void;
+    addToCart: (dishData: TCartItem) => void;
 }
 
 const DishCard = ({
@@ -29,6 +31,7 @@ const DishCard = ({
     favState,
     addToFav,
     removeFromFav,
+    addToCart
 }: IDishCardProps) => {
     const getColorClass = (): string => {
         switch (ingredient) {
@@ -60,6 +63,18 @@ const DishCard = ({
         }
     }
 
+    const handleAddToCart = () => {
+        addToCart({
+            id: id!,
+            name: name!,
+            weight: selWeight!,
+            price: discountprice === 0 ? price! : discountprice!,
+            image_link: image_link!,
+            quantity: 1,
+            description: description!
+        })
+    }
+
     return (
         <div className="dish-card">
             {ingredient && ingredient !== "Не выбрано" && (
@@ -86,8 +101,9 @@ const DishCard = ({
                 <button className="dish-card-weight" onClick={() => setSelWeight(weight_big)}>{weight_big} г</button>
                 {discountprice === 0 ? <div></div> : <h4 className="dish-card-prevprice">{price} р</h4>}
                 {weight_small === 0 ? <div></div> : <button className="dish-card-weight" onClick={() => setSelWeight(weight_small)}>{weight_small} г</button>}
-                <button className="dish-card-buy">
+                <button className="dish-card-buy" onClick={() => handleAddToCart()}>
                     {discountprice === 0 ? price : discountprice} р <img alt="" src="" />
+                    <img alt="" src="/icons/cart.svg" className="dish-card-icon" />
                 </button>
             </div>
         </div>

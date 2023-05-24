@@ -23,7 +23,7 @@ const Permanent = ({promData, promLoading, seasonData, seasonLoading}:TProm) => 
                         {promLoading ? <div>oops</div> :
                             promData && promData.map((promo, index) => {
                                 return <PermPromote 
-                                    key={promo.id}
+                                    key={index}
                                     title={promo.title}
                                     description={promo.description}
                                     image_link={promo.image_link}

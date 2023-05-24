@@ -73,12 +73,18 @@
     &-pl {
         max-width: 600px;
         width: 100%;
+
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
     }
 
     &-item {
         margin-top: 45px;
         display: grid;
-        grid-template-columns: 100px 275px 200px;
+        grid-template-columns: 100px 275px 175px;
         row-gap: 20px;
         column-gap: 25px;
         position: relative;
@@ -92,9 +98,16 @@
         }
 
         &-img {
-            grid-column: 1;
-            grid-row-start: 1;
-            grid-row-end: 3;
+            
+            &-cont {
+                grid-column: 1;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                @include FlexCenter();
+                border-radius: 100px;
+                width: 100px;
+                height: 100px;
+            }
         }
 
         &-title {

@@ -1,6 +1,14 @@
+import { ICart } from "../../redux/services/cartService";
 import CartDish from "./CartDish/CartDish";
 
-const Cart = () => {
+type TCart = {
+    favState: ICart,
+    handleRemove: (type: "cart" | "fav", id: number) => void,
+    increaseItemCart: (index:number) => void,
+    decreaseItemCart: (index:number) => void,
+}
+
+const Cart = ({favState, handleRemove, decreaseItemCart, increaseItemCart}:TCart) => {
     return (
         <div className="container">
             <section className="cart">
@@ -49,7 +57,47 @@ const Cart = () => {
 
                 <div className="cart-pl">
                     <h1 className="title-h1">Корзина</h1>
-                    <CartDish />
+                    {favState.cart.map((cartItem, index) => {
+                        return <CartDish 
+                            key={index}
+                            type="cart"
+                            id={cartItem.id}
+                            description={cartItem.description}
+                            name={cartItem.name}
+                            image_link={cartItem.image_link}
+                            weight={cartItem.weight}
+                            price={cartItem.price}
+                            handleRemove={handleRemove}
+                            index={index}
+                            decreaseItemCart={decreaseItemCart}
+                            increaseItemCart={increaseItemCart}
+                        />
+                    })}
+
+                    <div className="cart-pl-row">
+                        <h3 className="cart-inp-title">Сумма заказа</h3>
+                        <h3 className="cart-inp-title">{favState.cart.reduce((a, b) => a + b.price, 0)} р</h3>
+                    </div>
+
+                    <button className="yButton yButton-large" style={{marginTop: 40}}>Оформить заказ</button>
+
+                    <h3 className="title-h1" style={{marginTop: 40}}>Избранное</h3>
+                    {favState.fav.map((cartItem, index) => {
+                        return <CartDish 
+                            key={index}
+                            type="fav"
+                            id={cartItem.id}
+                            description={cartItem.description}
+                            name={cartItem.name}
+                            image_link={cartItem.image_link}
+                            weight={cartItem.weight}
+                            price={cartItem.price}
+                            handleRemove={handleRemove}
+                            index={index}
+                            decreaseItemCart={decreaseItemCart}
+                            increaseItemCart={increaseItemCart}
+                        />
+                    })}
                 </div>
             </section>
         </div>
