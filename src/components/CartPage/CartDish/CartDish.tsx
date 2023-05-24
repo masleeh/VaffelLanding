@@ -13,12 +13,14 @@ const CartDish = ({
     index,
     decreaseItemCart,
     increaseItemCart,
+    addToCart
 }: TCartItem & {
     type: "cart" | "fav";
     handleRemove: (type: "cart" | "fav", id: number) => void;
     index: number;
     increaseItemCart: (index: number) => void;
     decreaseItemCart: (index: number) => void;
+    addToCart: (dishData: TCartItem) => void;
 }) => {
     return (
         <div className="cart-item">
@@ -55,7 +57,7 @@ const CartDish = ({
                 <h3 className="cart-item-price">{price * quantity} р</h3>
 
                 {type === "fav" && (
-                    <button style={{ marginLeft: 20 }}>
+                    <button style={{ marginLeft: 20 }} onClick={() => addToCart({id, name, price, description, image_link, weight, quantity: 1})}>
                         <img alt="" src="/icons/cart.svg" />
                     </button>
                 )}

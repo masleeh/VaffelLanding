@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { decreaseQuantity, increaseQuantity, removeItemFromCart } from '../../redux/services/cartService'
+import { addItemToCart, decreaseQuantity, increaseQuantity, removeItemFromCart } from '../../redux/services/cartService'
 import { removeFav } from '../../redux/services/cartService'
+import { TCartItem } from '../../types/Data'
 import Cart from './Cart'
 
 const CartContainer = () => {
@@ -23,6 +24,10 @@ const CartContainer = () => {
         dispatch(removeItemFromCart(id))
     }
 
+    const addToCart = (dishData: TCartItem) => {
+        dispatch(addItemToCart(dishData))
+    }
+
     const handleRemove = (type: "cart" | "fav", id: number) => {
         if (type === "fav") {
             removeFavItem(id)
@@ -37,6 +42,7 @@ const CartContainer = () => {
             handleRemove={handleRemove}
             increaseItemCart={increaseItemCart}
             decreaseItemCart={decreaseItemCart}
+            addToCart={addToCart}
         />
     )
 }
